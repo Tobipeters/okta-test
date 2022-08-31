@@ -2,10 +2,12 @@
   <div>
     <h3>Welcome to My Test App</h3>
 
-    <div class="btn-container">
-      <button (click)="login()">Login with Okta</button>
+    <h5 *ngIf="givenName">You're logged in as {{ givenName }}</h5>
 
-      <button (click)="logout()">Logout</button>
+    <div class="btn-container">
+      <button (click)="login()" *ngIf="!givenName">Login with Okta</button>
+
+      <button (click)="logout()" *ngIf="givenName">Logout</button>
     </div>
   </div>
 </div>

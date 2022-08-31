@@ -29,11 +29,12 @@ export class AppComponent {
     this.oauthService.logOut();
   };
 
-  // get givenName(): any {
-  //   const claims = this.oauthService.getIdentityClaims();
-  //   if (!claims) {
-  //     return null;
-  //   }
-  //   return claims['name'];
-  // }
+  get givenName(): any {
+    const claims: any = this.oauthService.getIdentityClaims();
+    if (!claims) {
+      return null;
+    }
+
+    return claims['name'];
+  }
 }
